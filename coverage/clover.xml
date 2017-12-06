@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1512033546221" clover="3.2.0">
+  <project timestamp="1512033546222" name="All files">
+    <metrics statements="30" coveredstatements="9" conditionals="6" coveredconditionals="1" methods="8" coveredmethods="1" elements="44" coveredelements="11" complexity="0" loc="30" ncloc="30" packages="8" files="11" classes="11">
+      <package name="src">
+        <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <file name="App.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/App.js">
+          <metrics statements="8" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.const">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="actions.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/const/actions.js">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.navigation">
+        <metrics statements="8" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <file name="DefaultNavigation.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/navigation/DefaultNavigation.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="7" count="1" type="stmt"/>
+        </file>
+        <file name="RootNavigation.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/navigation/RootNavigation.js">
+          <metrics statements="7" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+        </file>
+        <file name="UserNavigation.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/navigation/UserNavigation.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.reducers">
+        <metrics statements="6" coveredstatements="3" conditionals="4" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <file name="UserReducer.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/reducers/UserReducer.js">
+          <metrics statements="5" coveredstatements="2" conditionals="4" coveredconditionals="1" methods="1" coveredmethods="1"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="11" count="1" type="cond" truecount="0" falsecount="3"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/reducers/index.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="4" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.screens.AboutScreen">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="index.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/screens/AboutScreen/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.screens.DefaultScreen">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="index.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/screens/DefaultScreen/index.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="7" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.screens.RegisterScreen">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="index.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/screens/RegisterScreen/index.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
+      </package>
+      <package name="src.store">
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="configureStore.js" path="/Users/dnmsk/Projects/Freelance/sleepyleo/src/store/configureStore.js">
+          <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
