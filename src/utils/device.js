@@ -5,8 +5,8 @@ class Device extends SecureObject {
     super('deviceToken');
   }
 
-  get token() { return super.value; }
-  set token(val) { return super.value = val; }
+  get token() { return this.value; }
+  set token(val) { return this.value = val; }
 };
 
 export default new Device();

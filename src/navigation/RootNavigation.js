@@ -64,11 +64,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  deviceInit: (onReady) => deviceInit().then((data) => {
-    console.log(data);
+  deviceInit: () => deviceInit().then((data) => {
     dispatch(data);
-    onReady();
-  })
+  }).catch(console.log)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RootNavigation);

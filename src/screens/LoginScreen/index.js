@@ -15,8 +15,8 @@ class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-//      login: 'test17@test.test',
-//      password: 'qwerty'
+      login: 'test17@test.test',
+      password: 'qwerty'
     };
   }
 
@@ -63,7 +63,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loginUser: (credentials, component) => {
       loginUser(credentials)
-        .then((action) => { dispatch(action); return action; })
+        .then((action) => {
+          dispatch(action);
+          return action;
+        })
         .then((action) => {
           if (action.payload.success) {
             navigateTo(component.props.navigation, 'User', true); 

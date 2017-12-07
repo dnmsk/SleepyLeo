@@ -14,8 +14,8 @@ class User extends SecureObject {
     return this.details !== undefined;
   }
 
-  get token() { return super.value; }
-  set token(val) { return super.value = val; }
+  get token() { return this.value; }
+  set token(val) { return this.value = val; }
 };
 
 const user = new User();
