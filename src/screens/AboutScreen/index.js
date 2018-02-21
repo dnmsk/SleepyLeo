@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, View, StyleSheet, Text, Image } from 'react-native';
-//import { Card, Button, Icon } from 'react-native-elements';
-import Styles from '/src/const/styles';
+import { Styles } from '/src/const/styles';
 
 class AboutScreen extends Component {
   static navigationOptions = {

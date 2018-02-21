@@ -7,6 +7,6 @@ class Device extends SecureObject {
 
   get token() { return this.value; }
   set token(val) { return this.value = val; }
-};
+}
 
 export default new Device();

@@ -43,6 +43,6 @@ class SecureObject {
     }).catch(console.log);
     return val;
   }
-};
+}
 
 export default SecureObject;

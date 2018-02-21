@@ -1,28 +1,18 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { ScrollView, View, StyleSheet, Text, Image } from 'react-native';
-import Styles from '/src/const/styles';
-import { navigateTo } from '/src/services/navigation';
-import user from '/src/utils/user';
+import Loading from './Loading';
+import { initUser } from '/src/actions/UserActions';
 
 class LoadingScreen extends Component {
   componentWillMount() {
-    user.token
-      .then((user_token) => {
-        navigateTo(this.props.navigation, user_token ? 'User' : 'Default', true);
-      })
-      .catch(console.log);
+    this.props.initUser();
   }
 
   render() {
     return (
-      <View>
-        <Text style={Styles.Font.H1}>
-          Loading...
-        </Text>
-      </View>
-
+      <Loading />
     );
   }
 }
 
-export default LoadingScreen;
+export default connect(null, {initUser})(LoadingScreen);

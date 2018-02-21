@@ -1,89 +1,84 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, TextInput } from 'react-native';
 import { connect } from 'react-redux';
-import { Button, FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
+import { Container, Content } from 'native-base';
 
 import { loginUser } from '/src/actions/UserActions';
-import Styles from '/src/const/styles';
-import { navigateTo } from '/src/services/navigation';
+import { Styles } from '/src/const/styles';
+
+import WindowTitle from '/src/components/WindowTitle';
+import Text from '/src/components/Text';
+import Center from '/src/components/Center';
+import Input from '/src/components/Input';
+import CheckBox from '/src/components/CheckBox';
+import AppFooter from '/src/components/Footer/AppFooter';
+import { ButtonPrimary } from '/src/components/Button';
 
 class LoginScreen extends Component {
-  static navigationOptions = {
-    title: 'Вход',
-  }
-
   constructor(props) {
     super(props);
-    this.state = {
-      login: 'test17@test.test',
-      password: 'qwerty'
-    };
+    this.state = __DEV__
+      ? {
+        login: 'test17@test.test',
+        password: 'qwerty'
+      }
+      : {};
   }
 
   render() {
+    const paddingHorizontal = Styles.Fn.HorizontalPercent(0.1);
     return (
-        <View>
-          <Text style={Styles.Font.H5}>
-            Войдите в свой аккаунт. Регистрация необходима, чтобы узнать возраст вашего малыша, без этого мы не сможем ничего порекомендовать!
-          </Text>
-          <FormLabel labelStyle={Styles.Font.H4}>Email</FormLabel>
-          <FormInput
-            onChangeText={(text) => this.setState({login: text})}
-            value={this.state.login}
-            placeholder="Введите Email"/>
+      <Container>
+        <Content>
+          <WindowTitle>
+            <Text style={[Styles.Font.H3]}>
+              Авторизация
+            </Text>
+          </WindowTitle>
+          <Center style={{paddingLeft: paddingHorizontal, paddingRight: paddingHorizontal}}>
+            <Text style={[Styles.Font.H2, { textAlign: 'center', marginTop: Styles.Fn.VerticalPercent(0.07) }]}>
+              Вход
+            </Text>
+            <Text style={[Styles.Font.H2, { textAlign: 'center' }]}>
+              в сервис
+            </Text>
+            <Input
+              style={{marginTop: Styles.Fn.VerticalPercent(0.15)}}
+              placeholder='Email'
+              onChangeText={(text) => this.setState({login: text})}
+              value={this.state.login} />
 
-          <FormLabel labelStyle={Styles.Font.H4}>Пароль</FormLabel>
-          <FormInput
-            onChangeText={(text) => this.setState({password: text})}
-            secureTextEntry={true}
-            value={this.state.password}
-            placeholder="Введите ваш пароль"/>
+            <Input
+              style={{marginTop: Styles.Fn.VerticalPercent(0.05)}}
+              placeholder='Пароль'
+              onChangeText={(text) => this.setState({password: text})}
+              secureTextEntry={true}
+              value={this.state.password} />
 
-          {!!this.state.message && (
-            <FormValidationMessage>{this.state.message}</FormValidationMessage>
-          )}
-          <Button
-            onPress={() => { this._doLogin(); }}
-            title="Войти"
-            style={Styles.Button.Primary.Style} />
-        </View>
+            {!!this.state.message && (
+              <Text>{this.state.message}</Text>
+            )}
 
+            <ButtonPrimary
+              onPress={() => { this._doLogin(); }}
+              containerStyle={{marginTop: Styles.Fn.VerticalPercent(0.05)}}>
+              Войти
+            </ButtonPrimary>
+          </Center>
+        </Content>
+        <AppFooter />
+      </Container>
     );
   }
 
   _doLogin() {
-    this.props.loginUser(
-      {Email: this.state.login, Password: this.state.password},
-      this
-    );
+    this.props.loginUser({Email: this.state.login, Password: this.state.password});
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    loginUser: (credentials, component) => {
-      loginUser(credentials)
-        .then((action) => {
-          dispatch(action);
-          return action;
-        })
-        .then((action) => {
-          if (action.payload.success) {
-            navigateTo(component.props.navigation, 'User', true); 
-          } else {
-            component.setState({message: action.payload.message})
-          }
-        })
-        .catch(console.log);
-    }
-  }
-};
-
 const mapStateToProps = state => {
   return {
-    navigationState: state.navigation,
     user: state.user
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default connect(mapStateToProps, {loginUser})(LoginScreen);

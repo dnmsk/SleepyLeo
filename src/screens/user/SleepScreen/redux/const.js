@@ -1,0 +1,7 @@
+export const SLEEP_GET = 'SLEEP/GET';
+export const SLEEP_POST = 'SLEEP/POST';
+export const SLEEP_PUT = 'SLEEP/PUT';
+export const SLEEP_DELETE = 'SLEEP/DELETE';
+export const SLEEP_SET_MODE = 'SLEEP/SET_MODE';
+export const SLEEPS_GET = 'SLEEPS/GET';
+export const SLEEP_RECOMMENDATIONS_GET = 'SLEEP/RECOMMENDATIONS/GET';

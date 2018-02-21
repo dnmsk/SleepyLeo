@@ -7,7 +7,7 @@ class User extends SecureObject {
   }
 
   get details() {
-    return store.user_details
+    return store.user_details;
   }
 
   get authorized() {
@@ -16,7 +16,7 @@ class User extends SecureObject {
 
   get token() { return this.value; }
   set token(val) { return this.value = val; }
-};
+}
 
 const user = new User();
 
