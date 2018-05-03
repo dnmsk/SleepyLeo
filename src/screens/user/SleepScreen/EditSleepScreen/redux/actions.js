@@ -1,7 +1,7 @@
 import { DEFAULT, SLEEP_EDIT_SET_MODE, SLEEP_EDIT_LOAD, SLEEP_EDIT, SLEEP_EDIT_DATE } from './const';
 import Net from '/src/network';
 import * as baseFunctions from '/src/actions/base';
-import { getRecommendations, getSleep as getMainScreenSleep, getSleeps } from '../../redux/actions';
+import { getRecommendations, getLastSleep, getSleeps } from '../../redux/actions';
 import { isDaySleep } from '../../redux/sleepSwitcherFunctions';
 
 export function getSleep(id, onSuccess) {
@@ -52,7 +52,7 @@ export function putSleep(sleep, onSuccess) {
       WhenWakeUpTimeUtc: sleep.wakeup,
     }).then((data) => {
       getRecommendations()(dispatch);
-      getMainScreenSleep()(dispatch);
+      getLastSleep()(dispatch);
       getSleeps()(dispatch);
       return baseFunctions.navigateBack({reload: true})(dispatch);        
     });
