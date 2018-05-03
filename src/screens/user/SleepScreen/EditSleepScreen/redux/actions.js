@@ -1,7 +1,7 @@
 import { DEFAULT, SLEEP_EDIT_SET_MODE, SLEEP_EDIT_LOAD, SLEEP_EDIT, SLEEP_EDIT_DATE } from './const';
 import Net from '/src/network';
 import * as baseFunctions from '/src/actions/base';
-import { getRecommendations, getSleeps } from '../../redux/actions';
+import { getRecommendations, getSleep as getMainScreenSleep, getSleeps } from '../../redux/actions';
 import { isDaySleep } from '../../redux/sleepSwitcherFunctions';
 
 export function getSleep(id, onSuccess) {
@@ -11,7 +11,7 @@ export function getSleep(id, onSuccess) {
         let sleep = {
           isDaySleep: data.dayNightString === 'Day',
           since: new Date(data.fromTime),
-          wakeup: new Date(data.toTime),
+          wakeup: data.toTime ? new Date(data.toTime) : null,
           id: data.id
         };
         dispatch({
@@ -52,6 +52,7 @@ export function putSleep(sleep, onSuccess) {
       WhenWakeUpTimeUtc: sleep.wakeup,
     }).then((data) => {
       getRecommendations()(dispatch);
+      getMainScreenSleep()(dispatch);
       getSleeps()(dispatch);
       return baseFunctions.navigateBack({reload: true})(dispatch);        
     });
@@ -73,7 +74,8 @@ module.exports = {
 
   openScreen: function(sleep) {
     return (dispatch) => {
-      baseFunctions.navigateTo('EditSleep', { sleepId: sleep.sleepGuid })(dispatch);
+      const pars = sleep ? { sleepId: sleep.sleepGuid || sleep } : undefined;
+      baseFunctions.navigateTo('EditSleep', pars)(dispatch);
     };
   }
 };

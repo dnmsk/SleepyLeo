@@ -90,7 +90,7 @@ class SleepScreen extends Component {
               {childName} { this.props.sleep.since ? 'спит.' : 'еще не спит?' }
             </Text>
             <View style={{marginTop: vMargin}}>
-              <Timer since={this.props.sleep.since} dispatch={this.props.dispatch} />
+              <Timer since={this.props.sleep.since} sleepId={this.props.sleep.id} dispatch={this.props.dispatch} />
             </View>
             <Center style={{marginTop: vMargin}}>
               <ButtonPrimary onPress={() => { this._sleepButtonPressed(); }}>

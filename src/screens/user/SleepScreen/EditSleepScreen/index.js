@@ -88,12 +88,14 @@ class EditSleepScreen extends Component {
             </SleepRow>
             {this.state.editedRow == 'sleep'
               && (<Datepicker dateTime={this.props.sleep.since} onDateTimeSelected={(val) => {this._setSelectedValue('sleep', val);}}/>)}
-            <Hr/>
-            <SleepRow date={this.props.sleep.wakeup} style={{marginTop: vMargin, marginBottom: vMargin}} onPress={() => {this._setEditedRow('wakeup');}}>
-              Малыш проснулся
-            </SleepRow>
-            {this.state.editedRow == 'wakeup'
-              && (<Datepicker dateTime={this.props.sleep.wakeup} onDateTimeSelected={(val) => {this._setSelectedValue('wakeup', val);}}/>)}
+            {!(this.props.sleep.since && !this.props.sleep.wakeup) && <View>
+              <Hr/>
+              <SleepRow date={this.props.sleep.wakeup} style={{marginTop: vMargin, marginBottom: vMargin}} onPress={() => {this._setEditedRow('wakeup');}}>
+                Малыш проснулся
+              </SleepRow>
+              {this.state.editedRow == 'wakeup'
+                && (<Datepicker dateTime={this.props.sleep.wakeup} onDateTimeSelected={(val) => {this._setSelectedValue('wakeup', val);}}/>)}
+            </View>}
             <Hr/>
             <Center style={{marginTop: vMargin}}>
               <ButtonPrimary
