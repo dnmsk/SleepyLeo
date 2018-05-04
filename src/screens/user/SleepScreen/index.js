@@ -17,7 +17,6 @@ import Recommendation from '/src/components/notifications/Recommendation';
 import WindowTitle from '/src/components/WindowTitle';
 
 import ButtonHint from './ButtonHint';
-import SleepRecommendation from './SleepRecommendation';
 import SleepSwitcher from './SleepSwitcher';
 import Timer from './Timer';
 import TodaySleeps from './TodaySleeps';
@@ -76,10 +75,7 @@ class SleepScreen extends Component {
               Добавить сон
             </Text>
           </WindowTitle>
-
-          { this.state.sleepsLoaded && <SleepRecommendation
-            todaySleeps={this.props.today.sleeps}
-            recommendations={this.props.sleep.recommendations} /> }
+          <Recommendation text={this.props.sleep.recommendations} />
 
           <View style={Styles.Blocks.Screen.Paddings}>
             <View style={{marginTop: 1.6*vMargin}}>
@@ -87,7 +83,7 @@ class SleepScreen extends Component {
             </View>
             <Hr style={{marginTop: vMargin }} />
             <Text style={[Styles.Font.H2, { textAlign: 'center', marginTop: vMargin }]}>
-              {childName} { this.props.sleep.since ? 'спит.' : 'еще не спит?' }
+              {childName} { this.props.sleep.since ? 'спит' : 'еще не спит?' }
             </Text>
             <View style={{marginTop: vMargin}}>
               <Timer since={this.props.sleep.since} sleepId={this.props.sleep.id} dispatch={this.props.dispatch} />

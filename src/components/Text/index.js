@@ -7,6 +7,8 @@ class DefaultText extends React.Component {
     return (
       <Text
         onPress={this.props.onPress}
+        autoCorrect={!!this.props.autoCorrect}
+        autoCapitalize={this.props.autoCapitalize || 'none'}
         style={[
           Styles.Font.Default,
           this.props.style

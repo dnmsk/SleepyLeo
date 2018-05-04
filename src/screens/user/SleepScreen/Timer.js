@@ -46,7 +46,7 @@ class Timer extends Component {
             <Text style={[
               Styles.Font.Info,
               { fontSize: Styles.Font.H1.fontSize } ]}>
-              {toTimeString(this.state.time, 'minutes')}
+              {toTimeString(this.props.since || this.state.time, 'minutes')}
             </Text>
             <TouchableOpacity
               onPress={() => {this.props.openEditScreen(this.props.sleepId);}}>

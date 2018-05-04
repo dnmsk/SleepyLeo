@@ -2,11 +2,14 @@ import Config from './config';
 import device from '/src/utils/device';
 import user from '/src/utils/user';
 
-export default async function(target, payload=undefined, verb='POST') {
+const offset = -new Date().getTimezoneOffset();
+
+export default function(target, payload=undefined, verb='POST') {
   const allowLogs = __DEV__;
   let headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
+    'X-TimeOffset': offset,
   };
 
   return user.token
@@ -29,7 +32,6 @@ export default async function(target, payload=undefined, verb='POST') {
         if (verb != 'GET') {
           params['body'] = JSON.stringify(payload); 
         } else {
-          //payload = payload || {};
           var strPars = Object.keys(payload).map(function(key) {
             return key + '=' + payload[key];
           }).join('&');

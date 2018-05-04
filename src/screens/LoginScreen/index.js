@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Content } from 'native-base';
 
-import { loginUser } from '/src/actions/UserActions';
+import { loginUser, navigateBack } from '/src/actions/UserActions';
 import { Styles } from '/src/const/styles';
 
 import WindowTitle from '/src/components/WindowTitle';
 import Text from '/src/components/Text';
 import Center from '/src/components/Center';
+import Cross from '/src/components/Cross';
 import Input from '/src/components/Input';
 import CheckBox from '/src/components/CheckBox';
 import AppFooter from '/src/components/Footer/AppFooter';
@@ -30,6 +31,8 @@ class LoginScreen extends Component {
       <Container>
         <Content>
           <WindowTitle>
+            <Cross Large onPress={() => {this.props.navigateBack();}}
+              style={{position: 'absolute', left: '-25%', top: '10%'}} />
             <Text style={[Styles.Font.H3]}>
               Авторизация
             </Text>
@@ -54,10 +57,6 @@ class LoginScreen extends Component {
               secureTextEntry={true}
               value={this.state.password} />
 
-            {!!this.state.message && (
-              <Text>{this.state.message}</Text>
-            )}
-
             <ButtonPrimary
               onPress={() => { this._doLogin(); }}
               containerStyle={{marginTop: Styles.Fn.VerticalPercent(0.05)}}>
@@ -81,4 +80,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {loginUser})(LoginScreen);
+export default connect(mapStateToProps, {loginUser, navigateBack})(LoginScreen);

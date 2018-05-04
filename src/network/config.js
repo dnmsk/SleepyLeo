@@ -5,6 +5,7 @@ const Config = {
   Profile: 'Api/Profile',
   SleepNorm: 'Api/SleepNorm',
   Recommendations: 'Api/Recommendations',
+  RecommendationsV2: 'Api/RecommendationText',
   Sleeps: 'Api/Sleeps',
   Sleep: 'Api/Sleep',
   LastSleep: 'Api/LastSleep',

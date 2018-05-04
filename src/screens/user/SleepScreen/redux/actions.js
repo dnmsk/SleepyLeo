@@ -11,13 +11,6 @@ export function getSleeps(onSuccess) {
       let todaySleeps = [];
       if (data && data.sleeps) {
         todaySleeps = data.sleeps;
-        //d.page.forEach((val) => {
-        //  todaySleeps = todaySleeps.concat(val.sleeps);
-          //val.forDate = new Date(val.forDate);
-          //if (isToday(val.forDate) && !todaySleeps) {
-          //  todaySleeps = val.sleeps;
-          //}
-        //});
       }
       dispatch({
         type: SLEEPS_GET,
@@ -54,8 +47,7 @@ export function getLastSleep(onSuccess) {
 
 export function getRecommendations() {
   return (dispatch) => {
-    Net(dispatch).Recommendations.get().then((data) => {
-      console.log('getRecommendations', data)
+    Net(dispatch).RecommendationsV2.get().then((data) => {
       dispatch({
         type: SLEEP_RECOMMENDATIONS_GET,
         payload: data

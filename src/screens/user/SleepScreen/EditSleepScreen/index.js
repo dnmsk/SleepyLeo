@@ -34,10 +34,12 @@ class EditSleepScreen extends Component {
   }
 
   _onWillFocus = a => {
-    console.log('_willFocus EditSleepScreen', a);
     this.setState({loaded: false});
     this.props.getSleep((a.state.params || {}).sleepId, () => {
-      this.setState({loaded: true});
+      this.setState({
+        loaded: true,
+        onlySince: this.props.sleep.since && !this.props.sleep.wakeup
+      });
     })
   };
 
@@ -88,7 +90,7 @@ class EditSleepScreen extends Component {
             </SleepRow>
             {this.state.editedRow == 'sleep'
               && (<Datepicker dateTime={this.props.sleep.since} onDateTimeSelected={(val) => {this._setSelectedValue('sleep', val);}}/>)}
-            {!(this.props.sleep.since && !this.props.sleep.wakeup) && <View>
+            {!this.state.onlySince && <View>
               <Hr/>
               <SleepRow date={this.props.sleep.wakeup} style={{marginTop: vMargin, marginBottom: vMargin}} onPress={() => {this._setEditedRow('wakeup');}}>
                 Малыш проснулся

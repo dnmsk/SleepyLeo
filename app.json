@@ -1,17 +1,19 @@
 {
   "expo": {
     "name": "SleepyLeo",
-    "version": "0.1",
+    "version": "1.3",
     "sdkVersion": "25.0.0",
     "orientation": "portrait",
     "ios": {
       "icon": "./src/const/assets/images/app_icon/app.ios.png",
-      "bundleIdentifier": "ru.sleepyleo.app"
+      "bundleIdentifier": "ru.sleepyleo.app",
+      "buildNumber": "1.3"
     },
     "android": {
       "icon": "./src/const/assets/images/app_icon/app.android.png",
       "package": "ru.sleepyleo.app",
-      "permissions": ["WAKE_LOCK"]
+      "permissions": ["WAKE_LOCK"],
+      "versionCode": 3
     }
   }
 }

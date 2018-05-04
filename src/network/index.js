@@ -37,6 +37,9 @@ const Net = (dispatch) => {
     Recommendations: {
       get: funcBuilder(Api.Recommendations, 'GET')
     },
+    RecommendationsV2: {
+      get: funcBuilder(Api.RecommendationsV2, 'GET')
+    },
     Register: {
       post: funcBuilder(Api.Register, 'POST')
     },
