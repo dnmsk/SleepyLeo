@@ -122,4 +122,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(RootNavigation);
+export default connect(mapStateToProps, actions)(RootNavigation);
