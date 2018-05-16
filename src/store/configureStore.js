@@ -5,9 +5,20 @@ import { AsyncStorage } from 'react-native';
 
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
+
+import {
+  createReactNavigationReduxMiddleware,
+} from 'react-navigation-redux-helpers';
+
 import rootReducer from '../reducers';
 
-let middlewares = [thunk];
+let middlewares = [
+  thunk,
+  createReactNavigationReduxMiddleware(
+    'root',
+    state => state.nav,
+  )
+];
 if (__DEV__) {
   middlewares.push(logger);
 }

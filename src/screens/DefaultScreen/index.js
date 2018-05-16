@@ -1,71 +1,50 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
-import Button from 'react-native-button';
+import { View, ScrollView, Image, Linking } from 'react-native';
+import { Container, Header, Left, Right, Content} from 'native-base';
+import { ButtonPrimary, ButtonSlave } from '/src/components/Button';
 //import I18n from 'app/i18n/i18n';
-import Styles from '/src/const/styles';
-import ServiceCarousel from './ServiceCarousel';
-//import { Card, Button, Icon } from 'react-native-elements';
-
-const carouselData = [
-  {
-    title: 'Выстраивает режим дня',
-    text: 'Дает рекомендации по времени укладывания и количеству снов в соответствии с возрастом ребенка'
-  },
-  {
-    title: 'Растет вместе с вашим малышом',
-    text: 'Сервис подойдет для детей от 0 до 2+ лет. Нормы бодрствования и сна постоянно меняются и мы это учитываем'
-  },
-  {
-    title: 'Ведет статистику',
-    text: 'Каждый день собираем статистику по снам малыша и даем оценку качеству сна. Смотрите, как дети спят у других мам'
-  },
-];
+import { Styles, Images } from '/src/const/styles';
+import Center from '/src/components/Center';
+import Text from '/src/components/Text';
+import Footer from '/src/components/Footer';
 
 class DefaultScreen extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      //header: null,//<View></View>,
-      headerLeft: (
-        <Text
-          onPress={() => { navigation.navigate('DefaultAbout'); }}
-          textDecorationLine={"underline"}>
-          О нас
-        </Text>
-      ),
-      headerRight: (
-        <Button
-          style={Styles.Button.Primary.Style}
-          containerStyle={Styles.Button.Primary.ContainerStyle}
-          onPress={() => { navigation.navigate('DefaultLogin'); }}>
-          Войти
-        </Button>
-      )
-    }
-  };
-
   render() {
     return (
-        <View>
-          <Text style={Styles.Font.H4}>
-            Зачем Вам SleepyLeo
-          </Text>
-          <Text style={Styles.Font.H6}>
-            Начните налаживать сон вашего малыша уже сегодня. С нами это легко: укажите только возраст малыша и получайте рекомендации по сну. Это совершенно бесплатно.
-          </Text>
-          <ServiceCarousel data={carouselData}/>
-          <Button
-            style={Styles.Button.Primary.Style}
-            containerStyle={Styles.Button.Primary.ContainerStyle}
-            onPress={this.toRegisterScreen}>
-            Регистрация
-          </Button>
-        </View>
+      <Container>
+        <Content>
+          <Center>
+            <Text style={[Styles.Font.H1, {marginTop: Styles.Fn.VerticalPercent(0.15)}]}>
+              SleepyLeo
+            </Text>
+            <Image style={[Styles.Blocks.LogoImage, {marginTop: Styles.Fn.VerticalPercent(0.05)}]} source={Images.Logo}/>
+            <ButtonPrimary
+              containerStyle={{marginTop: Styles.Fn.VerticalPercent(0.15)}}
+              onPress={() => this.props.navigation.navigate('DefaultLogin')}>
+              Войти
+            </ButtonPrimary>
+            <ButtonSlave
+              containerStyle={{marginTop: Styles.Fn.VerticalPercent(0.05)}}
+              onPress={() => this.props.navigation.navigate('DefaultRegister')}>
+              Регистрация
+            </ButtonSlave>
+          </Center>
+        </Content>
 
+        <Footer style={[Styles.Blocks.Footer]}>
+          {false && <Left style={Styles.Blocks.Screen.Default.FooterText.Left}>
+            <Text onPress={() => { Linking.openURL(''); }}>
+              Забыли пароль?
+            </Text>
+          </Left>}
+          <Right style={Styles.Blocks.Screen.Default.FooterText.Right}>
+            <Text onPress={() => { Linking.openURL('https://sleepyleo.answerdesk.io/'); }}>
+              Служба поддержки
+            </Text>
+          </Right>
+        </Footer>
+      </Container>
     );
-  }
-
-  toRegisterScreen = () => {
-    this.props.navigation.navigate('DefaultRegister');
   }
 }
 
