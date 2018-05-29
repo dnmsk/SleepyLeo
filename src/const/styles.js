@@ -1,4 +1,4 @@
-import { Dimensions, Platform, StatusBar, Stylesheet } from 'react-native';
+import { Dimensions, NativeModules, Platform, StatusBar, Stylesheet } from 'react-native';
 
 let viewportWidth, viewportHeight;
 set_dimensions();
@@ -99,9 +99,9 @@ const Images = {
 const IsIos = Platform.OS === 'ios';
 
 const Fn = {
+  isexpo: !!NativeModules.ExponentConstants,
   ios: IsIos,
   IosOrAndroid: (ios, android) => IsIos ? ios : android,
-  IosOrAndroidFn: (ios, android) => IsIos ? ios() : android(),
   height: function() { return viewportHeight - (StatusBar.currentHeight || MagicNumbers.StatusBarHeight); },
   width: function() { return viewportWidth; },
   VerticalPercent: function(percent) {
@@ -122,7 +122,7 @@ const Styles = {
     },
     Container: {
       backgroundColor: '#472561',
-      marginTop: StatusBar.currentHeight || MagicNumbers.StatusBarHeight,
+      marginTop: Fn.isexpo ? StatusBar.currentHeight || MagicNumbers.StatusBarHeight : 0,
       width: '100%',
       height: '100%'
     },

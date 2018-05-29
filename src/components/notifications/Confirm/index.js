@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { Image, View } from 'react-native';
 import { Left, Right } from 'native-base';
 
-import { Images, Styles } from '/src/const/styles';
+import { Images, Styles } from '../../../const/styles';
 
-import Center from '/src/components/Center';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
+import Center from '../../../components/Center';
+import Row from '../../../components/Row';
+import Text from '../../../components/Text';
 
 import Layout from '../Layout';
 import { closeConfirm } from '../redux/actions';

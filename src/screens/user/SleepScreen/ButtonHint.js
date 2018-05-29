@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
-import { Images, Styles } from '/src/const/styles';
-import Center from '/src/components/Center';
-import Text from '/src/components/Text';
+import { Images, Styles } from '../../../const/styles';
+import Center from '../../../components/Center';
+import Text from '../../../components/Text';
 
 export default class ButtonHint extends Component {
   render() {

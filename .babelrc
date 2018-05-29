@@ -1,6 +1,4 @@
 {
   "presets": ["react-native"],
-  "plugins": [
-    "babel-root-slash-import"
-  ]
+  "plugins": []
 }

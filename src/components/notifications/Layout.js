@@ -1,11 +1,11 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { Images, Styles } from '/src/const/styles';
+import { Images, Styles } from '../../const/styles';
 
-import Br from '/src/components/Br';
-import Center from '/src/components/Center';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
+import Br from '../Br';
+import Center from '../Center';
+import Row from '../Row';
+import Text from '../Text';
 
 export default class Layout extends React.Component {
   render() {

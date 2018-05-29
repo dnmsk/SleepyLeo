@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../const/styles';
 
 export default class Hr extends React.Component {
   render() {

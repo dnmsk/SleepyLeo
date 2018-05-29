@@ -1,5 +1,5 @@
-import { DEVICE_INIT } from '/src/const/actions';
-import * as baseFunctions from '/src/actions/base';
+import { DEVICE_INIT } from '../../const/actions';
+import * as baseFunctions from '../../actions/base';
 
 module.exports = {
   ...baseFunctions,

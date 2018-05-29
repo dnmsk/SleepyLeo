@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Container, Content, Left, Right } from 'native-base';
 import { connect } from 'react-redux';
-import { Styles } from '/src/const/styles';
-import { logoutUser } from '/src/actions/UserActions';
-import { parseInCurrentTZ, toDateString } from '/src/functions/date';
+import { Styles } from '../../../const/styles';
+import { logoutUser } from '../../../actions/UserActions';
+import { parseInCurrentTZ, toDateString } from '../../../functions/date';
 
-import Br from '/src/components/Br';
-import Center from '/src/components/Center';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
-import { ButtonPrimary } from '/src/components/Button';
-import WindowTitle from '/src/components/WindowTitle';
+import Br from '../../../components/Br';
+import Center from '../../../components/Center';
+import Row from '../../../components/Row';
+import Text from '../../../components/Text';
+import { ButtonPrimary } from '../../../components/Button';
+import WindowTitle from '../../../components/WindowTitle';
 
 class ProfileScreen extends Component {
   render() {

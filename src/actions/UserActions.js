@@ -1,9 +1,9 @@
-import user from '/src/utils/user';
+import user from '../utils/user';
 
-import * as baseFunctions from '/src/actions/base';
-import { DEFAULT, USER_LOGIN, USER_REGISTER, USER_LOGOUT } from '/src/const/actions';
-import Net from '/src/network';
-import { getProfile } from '/src/screens/user/ProfileScreen/redux/actions';
+import * as baseFunctions from './base';
+import { DEFAULT, USER_LOGIN, USER_REGISTER, USER_LOGOUT } from '../const/actions';
+import Net from '../network';
+import { getProfile } from '../screens/user/ProfileScreen/redux/actions';
 
 export function logoutUser() {
   return (dispatch) => {

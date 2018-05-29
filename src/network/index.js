@@ -1,5 +1,5 @@
-import { logoutUser } from '/src/actions/UserActions';
-import { showAlert } from '/src/actions/base';
+import { logoutUser } from '../actions/UserActions';
+import { showAlert } from '../actions/base';
 import Api from './config';
 import request from './api';
 

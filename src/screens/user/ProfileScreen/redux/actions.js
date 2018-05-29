@@ -1,4 +1,4 @@
-import Net from '/src/network';
+import Net from '../../../../network';
 import { PROFILE_GET } from './const';
 
 export function getProfile(onSuccess) {

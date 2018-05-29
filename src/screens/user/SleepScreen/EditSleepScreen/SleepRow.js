@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
-import { isToday, toDateString, toTimeString } from '/src/functions/date';
-import { Styles } from '/src/const/styles';
+import { isToday, toDateString, toTimeString } from '../../../../functions/date';
+import { Styles } from '../../../../const/styles';
 
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
+import Row from '../../../../components/Row';
+import Text from '../../../../components/Text';
 
 class EditSleepScreen extends Component {
   render() {

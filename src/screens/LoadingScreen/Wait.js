@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Spinner } from 'native-base';
-import Center from '/src/components/Center';
+import Center from '../../components/Center';
 
 class Wait extends Component {
   render() {

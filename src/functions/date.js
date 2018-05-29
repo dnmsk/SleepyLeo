@@ -31,6 +31,13 @@ function monthString(val) {
   }
 };
 
+export function dateIsEqual(d1, d2) {
+  if (!d1 || !d2) { return false; }
+  d1 = new Date(d1);
+  d2 = new Date(d2);
+  return d1.getYear() == d2.getYear() && d1.getMonth() == d2.getMonth() && d1.getDate() == d2.getDate();
+}
+
 export function parseInCurrentTZ(stringDate) {
   var b = stringDate.split(/\D/);
   return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
@@ -49,9 +56,7 @@ export function numberToHourMin(num) {
 };
 
 export function isToday(date) {
-  date = new Date(date);
-  var now = new Date();
-  return now.getYear() == date.getYear() && now.getMonth() == date.getMonth() && now.getDate() == date.getDate();
+  return dateIsEqual(new Date(), date);
 };
 
 export function toDateString(date, mode) {

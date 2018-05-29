@@ -5,16 +5,16 @@ import { Container, Content } from 'native-base';
 
 import DatePicker from 'react-native-datepicker';
 
-import { Styles } from '/src/const/styles';
-import { registerUser, navigateBack } from '/src/actions/UserActions';
-import WindowTitle from '/src/components/WindowTitle';
-import Text from '/src/components/Text';
-import Center from '/src/components/Center';
-import Cross from '/src/components/Cross';
-import Input from '/src/components/Input';
-import CheckBox from '/src/components/CheckBox';
-import AppFooter from '/src/components/Footer/AppFooter';
-import { ButtonPrimary } from '/src/components/Button';
+import { Styles } from '../../const/styles';
+import { registerUser, navigateBack } from '../../actions/UserActions';
+import WindowTitle from '../../components/WindowTitle';
+import Text from '../../components/Text';
+import Center from '../../components/Center';
+import Cross from '../../components/Cross';
+import Input from '../../components/Input';
+import CheckBox from '../../components/CheckBox';
+import AppFooter from '../../components/Footer/AppFooter';
+import { ButtonPrimary } from '../../components/Button';
 
 const dates = (()=> {
   let now = new Date();

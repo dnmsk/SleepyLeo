@@ -5,14 +5,15 @@ import { createReduxBoundAddListener } from 'react-navigation-redux-helpers';
 import { connect } from 'react-redux';
 
 import AppNavigator from './AppNavigator';
-import { Styles } from '/src/const/styles';
-import device from '/src/utils/device';
+import { Styles } from '../const/styles';
+import device from '../utils/device';
 import * as actions from './redux/actions';
-import * as baseActions from '/src/actions/base';
+import * as baseActions from '../actions/base';
 
-import BackgroundImage from '/src/components/BackgroundImage';
-import Alert from '/src/components/notifications/Alert';
-import Confirm from '/src/components/notifications/Confirm';
+import BackgroundImage from '../components/BackgroundImage';
+import Alert from '../components/notifications/Alert';
+import Confirm from '../components/notifications/Confirm';
+import PushNotificator from '../utils/PushNotificator';
 
 const addListener = createReduxBoundAddListener('root');
 
@@ -67,6 +68,7 @@ const WithNavigationState = connect(navigationMapStateToProps, {...actions, show
 
 class RootNavigation extends React.Component {
   constructor(props) {
+    //PushNotificator((notification) => {});
     super(props);
     this.state = this._getDimensions();
   }
