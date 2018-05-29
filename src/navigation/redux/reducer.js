@@ -1,4 +1,4 @@
-import AppNavigator from '/src/navigation/AppNavigator';
+import AppNavigator from '../AppNavigator';
 
 const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('Loading'));
 
@@ -61,7 +61,7 @@ const routesHandler = (() => {
         routeNames.pop();
         lastNavigateActionIsBack = true;
       }
-      routeName = routeNames.length > 0 ? routeNames.pop() : routeInitial;
+      let routeName = routeNames.length > 0 ? routeNames.pop() : routeInitial;
       return { routeName, key: routeKeys[routeName] };
     }
   }

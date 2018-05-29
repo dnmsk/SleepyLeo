@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import Loading from './Loading';
-import { initUser } from '/src/actions/UserActions';
+import { initUser } from '../../actions/UserActions';
 
 class LoadingScreen extends Component {
   componentWillMount() {

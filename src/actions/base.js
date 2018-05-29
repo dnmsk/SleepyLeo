@@ -1,5 +1,5 @@
 import { NavigationActions } from 'react-navigation';
-import { showAlert, showConfirm } from '/src/components/notifications/redux/actions';
+import { showAlert, showConfirm } from '../components/notifications/redux/actions';
 
 export function schedulePeriodicalTask(task, peroid) {
   return (dispatch) => {

@@ -1,9 +1,9 @@
 import { DEFAULT, SLEEP_GET, SLEEP_SET_MODE, SLEEP_POST, SLEEP_PUT, SLEEPS_GET, SLEEP_DELETE, SLEEP_RECOMMENDATIONS_GET } from './const';
-import Net from '/src/network';
-import * as baseFunctions from '/src/actions/base';
-import { isToday } from '/src/functions/date';
+import Net from '../../../../network';
+import * as baseFunctions from '../../../../actions/base';
+import { isToday } from '../../../../functions/date';
 import { isDaySleep } from './sleepSwitcherFunctions';
-import { numberToHourMin, toTimeString } from '/src/functions/date';
+import { numberToHourMin, toTimeString } from '../../../../functions/date';
 
 export function getSleeps(onSuccess) {
   return (dispatch) => {

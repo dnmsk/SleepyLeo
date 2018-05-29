@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../const/styles';
 
 class DefaultText extends React.Component {
   render() {

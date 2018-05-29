@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer } from 'native-base';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../const/styles';
 
 class FooterCustom extends React.Component {
   render() {

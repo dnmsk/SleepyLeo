@@ -1,7 +1,7 @@
 import { StackNavigator } from 'react-navigation';
 import DefaultNavigation from './DefaultNavigation';
 import UserNavigation from './UserNavigation';
-import LoadingScreen from '/src/screens/LoadingScreen';
+import LoadingScreen from '../screens/LoadingScreen';
 
 const AppNavigator = StackNavigator({
   User: {

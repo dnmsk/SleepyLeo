@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Content } from 'native-base';
 
-import { loginUser, navigateBack } from '/src/actions/UserActions';
-import { Styles } from '/src/const/styles';
+import { loginUser, navigateBack } from '../../actions/UserActions';
+import { Styles } from '../../const/styles';
 
-import WindowTitle from '/src/components/WindowTitle';
-import Text from '/src/components/Text';
-import Center from '/src/components/Center';
-import Cross from '/src/components/Cross';
-import Input from '/src/components/Input';
-import CheckBox from '/src/components/CheckBox';
-import AppFooter from '/src/components/Footer/AppFooter';
-import { ButtonPrimary } from '/src/components/Button';
+import WindowTitle from '../../components/WindowTitle';
+import Text from '../../components/Text';
+import Center from '../../components/Center';
+import Cross from '../../components/Cross';
+import Input from '../../components/Input';
+import CheckBox from '../../components/CheckBox';
+import AppFooter from '../../components/Footer/AppFooter';
+import { ButtonPrimary } from '../../components/Button';
 
 class LoginScreen extends Component {
   constructor(props) {

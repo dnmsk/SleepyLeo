@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Switch } from 'native-base';
-import { Styles } from '/src/const/styles';
-import Center from '/src/components/Center';
-import Text from '/src/components/Text';
+import { Styles } from '../../../const/styles';
+import Center from '../../../components/Center';
+import Text from '../../../components/Text';
 
 class SleepSwitch extends Component {
   _onSwitch(value) {

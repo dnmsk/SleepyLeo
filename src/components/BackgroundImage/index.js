@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../const/styles';
 
 class BackgroundImage extends React.Component {
   render() {

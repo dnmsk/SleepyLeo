@@ -1,4 +1,4 @@
-import * as DEFAULTS from '/src/const/actions';
+import * as DEFAULTS from '../../../../../const/actions';
 
 export { DEFAULTS };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonPrimary from './Primary';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../const/styles';
 
 class ButtonSlave extends React.Component {
   render() {

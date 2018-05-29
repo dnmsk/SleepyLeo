@@ -1,5 +1,5 @@
 import SecureObject from './SecureObject';
-import store from '/src/store/configureStore';
+import store from '../store/configureStore';
 
 class User extends SecureObject {
   constructor() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-native-button';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../const/styles';
 import Text from '../Text';
 import Center from '../Center';
 

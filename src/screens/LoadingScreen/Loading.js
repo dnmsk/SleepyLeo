@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Spinner } from 'native-base';
-import { Styles } from '/src/const/styles';
-import Text from '/src/components/Text';
+import { Styles } from '../../const/styles';
+import Text from '../../components/Text';
 import Wait from './Wait';
 
 class Loading extends Component {

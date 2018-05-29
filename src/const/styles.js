@@ -122,7 +122,7 @@ const Styles = {
     },
     Container: {
       backgroundColor: '#472561',
-      marginTop: StatusBar.currentHeight || MagicNumbers.StatusBarHeight,
+      marginTop: 0,//StatusBar.currentHeight || MagicNumbers.StatusBarHeight,
       width: '100%',
       height: '100%'
     },

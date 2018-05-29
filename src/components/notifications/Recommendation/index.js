@@ -1,10 +1,10 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { Images, Styles } from '/src/const/styles';
+import { Images, Styles } from '../../../const/styles';
 
-import Center from '/src/components/Center';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
+import Center from '../../../components/Center';
+import Row from '../../../components/Row';
+import Text from '../../../components/Text';
 
 export default class Recommendation extends React.Component {
   render() {

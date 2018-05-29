@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Styles } from '/src/const/styles';
-import Text from '/src/components/Text';
-import { ButtonPrimary } from '/src/components/Button';
+import { Styles } from '../../../const/styles';
+import Text from '../../../components/Text';
+import { ButtonPrimary } from '../../../components/Button';
 
 class DairyScreen extends Component {
   render() {

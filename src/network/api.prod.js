@@ -1,6 +1,6 @@
 import Config from './config';
-import device from '/src/utils/device';
-import user from '/src/utils/user';
+import device from '../utils/device';
+import user from '../utils/user';
 
 const offset = -new Date().getTimezoneOffset();
 

@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 
 import { openScreen as openEditScreen } from './EditSleepScreen/redux/actions';
 
-import { Images, Styles } from '/src/const/styles';
-import { toTimeString, toUTCTimeString } from '/src/functions/date';
-import Center from '/src/components/Center';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
+import { Images, Styles } from '../../../const/styles';
+import { toTimeString, toUTCTimeString } from '../../../functions/date';
+import Center from '../../../components/Center';
+import Row from '../../../components/Row';
+import Text from '../../../components/Text';
 
 class Timer extends Component {
   constructor(props) {

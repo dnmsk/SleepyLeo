@@ -5,16 +5,16 @@ import { Container, Content, Left, Body, Right, ListItem } from 'native-base';
 
 import * as sleepActions from './redux/actions';
 
-import { Styles, Images } from '/src/const/styles';
-import { ButtonPrimary } from '/src/components/Button';
-import Loading from '/src/screens/LoadingScreen/Loading';
-import Wait from '/src/screens/LoadingScreen/Wait';
-import Center from '/src/components/Center';
-import Hr from '/src/components/Hr';
-import Text from '/src/components/Text';
-import Row from '/src/components/Row';
-import Recommendation from '/src/components/notifications/Recommendation';
-import WindowTitle from '/src/components/WindowTitle';
+import { Styles, Images } from '../../../const/styles';
+import { ButtonPrimary } from '../../../components/Button';
+import Loading from '../../../screens/LoadingScreen/Loading';
+import Wait from '../../../screens/LoadingScreen/Wait';
+import Center from '../../../components/Center';
+import Hr from '../../../components/Hr';
+import Text from '../../../components/Text';
+import Row from '../../../components/Row';
+import Recommendation from '../../../components/notifications/Recommendation';
+import WindowTitle from '../../../components/WindowTitle';
 
 import ButtonHint from './ButtonHint';
 import SleepSwitcher from './SleepSwitcher';

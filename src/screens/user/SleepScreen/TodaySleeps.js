@@ -6,13 +6,13 @@ import { Left, Body, Right } from 'native-base';
 import { openScreen as openEditScreen } from './EditSleepScreen/redux/actions';
 import { deleteSleep } from './redux/actions';
 
-import { numberToHourMin, toTimeString } from '/src/functions/date';
-import { Styles, Images } from '/src/const/styles';
-import Center from '/src/components/Center';
-import Cross from '/src/components/Cross';
-import Hr from '/src/components/Hr';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
+import { numberToHourMin, toTimeString } from '../../../functions/date';
+import { Styles, Images } from '../../../const/styles';
+import Center from '../../../components/Center';
+import Cross from '../../../components/Cross';
+import Hr from '../../../components/Hr';
+import Row from '../../../components/Row';
+import Text from '../../../components/Text';
 
 class TodaySleeps extends Component {
   constructor(props) {

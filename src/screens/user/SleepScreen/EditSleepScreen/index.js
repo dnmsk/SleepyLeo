@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../../../const/styles';
 import { Container, Content, Left, Body, Right, ListItem } from 'native-base';
 
-import { ButtonPrimary } from '/src/components/Button';
-import Center from '/src/components/Center';
-import Cross from '/src/components/Cross';
-import Hr from '/src/components/Hr';
-import Loading from '/src/screens/LoadingScreen/Loading';
-import Text from '/src/components/Text';
-import WindowTitle from '/src/components/WindowTitle';
+import { ButtonPrimary } from '../../../../components/Button';
+import Center from '../../../../components/Center';
+import Cross from '../../../../components/Cross';
+import Hr from '../../../../components/Hr';
+import Loading from '../../../../screens/LoadingScreen/Loading';
+import Text from '../../../../components/Text';
+import WindowTitle from '../../../../components/WindowTitle';
 
 import Datepicker from './Datepicker';
 import SleepRow from './SleepRow';

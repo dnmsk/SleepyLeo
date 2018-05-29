@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Content, Left, Right } from 'native-base';
 import { ScrollView, View } from 'react-native';
-import { numberToHourMin } from '/src/functions/date';
-import { Styles } from '/src/const/styles';
-import Loading from '/src/screens/LoadingScreen/Loading';
-import { sleepNorms } from '/src/actions/DataActions';
+import { numberToHourMin } from '../../../functions/date';
+import { Styles } from '../../../const/styles';
+import Loading from '../../../screens/LoadingScreen/Loading';
+import { sleepNorms } from '../../../actions/DataActions';
 
-import Br from '/src/components/Br';
-import Center from '/src/components/Center';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
-import WindowTitle from '/src/components/WindowTitle';
+import Br from '../../../components/Br';
+import Center from '../../../components/Center';
+import Row from '../../../components/Row';
+import Text from '../../../components/Text';
+import WindowTitle from '../../../components/WindowTitle';
 
 class ManageScreen extends Component {
   static navigationOptions = (navigation) => {
