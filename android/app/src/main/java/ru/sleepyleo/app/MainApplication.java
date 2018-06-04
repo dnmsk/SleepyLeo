@@ -1,8 +1,10 @@
-package com.sleepyleo;
+package ru.sleepyleo.app;
 
 import android.app.Application;
 
+import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactApplication;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactlibrary.securekeystore.RNSecureKeyStorePackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
@@ -26,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactNativePushNotificationPackage(),
             new VectorIconsPackage(),
             new RNSecureKeyStorePackage(),
             new RNI18nPackage()
@@ -47,5 +50,17 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+  }
+
+  public static class MainActivity extends ReactActivity {
+
+      /**
+       * Returns the name of the main component registered from JavaScript.
+       * This is used to schedule rendering of the component.
+       */
+      @Override
+      protected String getMainComponentName() {
+          return "SleepyLeo";
+      }
   }
 }

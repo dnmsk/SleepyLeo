@@ -1,9 +1,9 @@
 import React from 'react';
 import { NativeModules, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
-//import { Font } from 'expo';
 
 import './src/global';
+import { Styles } from './src/const/styles';
 import store from './src/store/configureStore';
 import RootNavigation from './src/navigation/RootNavigation';
 import Wait from './src/screens/LoadingScreen/Wait';
@@ -16,25 +16,31 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: false,
+      isLoading: true,
       store: store
     };
   }
 
   componentDidMount() {
-    false && Font.loadAsync({
-      'Exo2-Regular': require('./src/const/assets/font/Exo2-Regular.ttf'),
-      'Exo2-Bold': require('./src/const/assets/font/Exo2-Bold.ttf'),
-      'Ionicons': require('@expo/vector-icons/fonts/Ionicons.ttf'),
-    })
-    .then(() => {
+    if (Styles.Fn.isexpo) {
+      import('expo')
+        .then((expo) => {
+          expo.Font.loadAsync({
+            'Exo2-Regular': require('./src/const/assets/font/Exo2-Regular.ttf'),
+            'Exo2-Bold': require('./src/const/assets/font/Exo2-Bold.ttf'),
+            'Ionicons': require('@expo/vector-icons/fonts/Ionicons.ttf'),
+          })
+          .then(() => {
+            this.setState({ isLoading: false });
+          });
+        })
+    } else {
       this.setState({ isLoading: false });
-    });
+    }
   }
 
   render() {
     const { store, isLoading } = this.state;
-    console.log('RootNavigation constructed!');
     if (isLoading) {
       return <Wait />;
     }
