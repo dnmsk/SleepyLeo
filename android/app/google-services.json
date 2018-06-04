@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "154884151800",
+    "firebase_url": "https://sleepyleo-2451a.firebaseio.com",
+    "project_id": "sleepyleo-2451a",
+    "storage_bucket": "sleepyleo-2451a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154884151800:android:a0051849a77ed460",
+        "android_client_info": {
+          "package_name": "ru.sleepyleo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154884151800-b0jmal52dgismj2b2g4esb1j300vvk18.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "154884151800-b0jmal52dgismj2b2g4esb1j300vvk18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzxekcFJ0i32ZtEHiAmYH2IlIPMWnpryw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

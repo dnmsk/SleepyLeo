@@ -10,14 +10,14 @@ import device from '../utils/device';
 import * as actions from './redux/actions';
 import * as baseActions from '../actions/base';
 
-import BackgroundImage from '../components/BackgroundImage';
 import Alert from '../components/notifications/Alert';
+import BackgroundImage from '../components/BackgroundImage';
 import Confirm from '../components/notifications/Confirm';
+import PushNotificator from '../utils/PushNotificator';
 
 const addListener = createReduxBoundAddListener('root');
 
 class Navigation extends React.Component {
-
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this._onBackPress);
   }
@@ -67,8 +67,10 @@ const WithNavigationState = connect(navigationMapStateToProps, {...actions, show
 
 class RootNavigation extends React.Component {
   constructor(props) {
-    console.log('RootNavigation constructed!');
     super(props);
+    PushNotificator((notification) => {
+      
+    });
     this.state = this._getDimensions();
   }
 
