@@ -12,21 +12,24 @@ class Sleep extends Component {
   render() {
     const val = this.props.sleep;
     const onPress = (s) => {
+      console.log('this.props.onSleepPress', this.props.onSleepPress);
+      console.log('this.props.onSleepPress', s);
       this.props.onSleepPress && this.props.onSleepPress(s);
     };
+    const scaleWidth = this.props.scaleWidth || 1;
 
     return (
     <View style={{marginBottom: 10}}>
       { val.parts 
         ? <Row>
-            <View style={{width: Styles.Fn.HorizontalPercent(0.3)}}>
+            <View style={{width: scaleWidth * Styles.Fn.HorizontalPercent(0.3)}}>
               <Text
                 style={Styles.Font.Info}>
                 {numberToHourMin(val.timeInHours)}
               </Text>
             </View>
-            <View style={{width: Styles.Fn.HorizontalPercent(0.5)}}>
-              <View style={{width: Styles.Fn.HorizontalPercent(0.45)}}>
+            <View style={{width: scaleWidth * Styles.Fn.HorizontalPercent(0.5)}}>
+              <View style={{width: scaleWidth * Styles.Fn.HorizontalPercent(0.45)}}>
                 <Text
                   style={[Styles.Font.Info]}>
                   c {toTimeString(val.goToSleepTime, 'minutes')} до {toTimeString(val.awakeTime, 'minutes')}
@@ -34,14 +37,14 @@ class Sleep extends Component {
               </View>
               {val.parts.map((part, idx) => {
                 return <Row key={idx}>
-                  <View style={{width: Styles.Fn.HorizontalPercent(0.45)}}>
+                  <View style={{width: scaleWidth * Styles.Fn.HorizontalPercent(0.45)}}>
                     <Text
                       style={[Styles.Font.Info, Styles.Font.Inactive, {textDecorationLine: 'underline'}]}
                       onPress={() => {onPress(part)}}>
                       c {toTimeString(part.goToSleepTime, 'minutes')} до {toTimeString(part.awakeTime, 'minutes')}
                     </Text>
                   </View>
-                  <View style={{width: Styles.Fn.HorizontalPercent(0.1)}}>
+                  <View style={{width: scaleWidth * Styles.Fn.HorizontalPercent(0.1)}}>
                     { !!this.props.deleteSleep && <Right>
                       <Cross Yellow onPress={() => { this.props.deleteSleep(part); }} />
                     </Right> }
@@ -51,20 +54,20 @@ class Sleep extends Component {
             </View>
           </Row>
         : <Row>
-            <View style={{width: Styles.Fn.HorizontalPercent(0.3)}}>
+            <View style={{width: scaleWidth * Styles.Fn.HorizontalPercent(0.3)}}>
               <Text
                 style={Styles.Font.Info}>
                 {numberToHourMin(val.timeInHours)}
               </Text>
             </View>
-            <View style={{width: Styles.Fn.HorizontalPercent(0.45)}}>
+            <View style={{width: scaleWidth * Styles.Fn.HorizontalPercent(0.45)}}>
               <Text
                 style={[Styles.Font.Info, {textDecorationLine: 'underline'}]}
                 onPress={() => {onPress(val)}}>
                 c {toTimeString(val.goToSleepTime, 'minutes')} до {toTimeString(val.awakeTime, 'minutes')}
               </Text>
             </View>
-            <View style={{width: Styles.Fn.HorizontalPercent(0.1)}}>
+            <View style={{width: scaleWidth * Styles.Fn.HorizontalPercent(0.1)}}>
               { !!this.props.deleteSleep && <Right>
                 <Cross Yellow onPress={() => { this.props.deleteSleep(val); }} />
               </Right> }

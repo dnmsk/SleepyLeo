@@ -98,7 +98,7 @@ const UserNavigation = TabNavigator({
     },
   },
   {
-    initialRouteName: 'UserFeed',//'UserRoot',
+    initialRouteName: 'UserRoot',
     tabBarPosition: 'bottom',
     tabBarOptions: {
       showIcon: true,

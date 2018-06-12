@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { View } from 'react-native';
 import { Container, Content } from 'native-base';
 import { Styles } from '../../../const/styles';
-import { dateIsEqual } from '../../../functions/date';
+import { dateIsEqual, toDateString } from '../../../functions/date';
 
 import * as feedActions from './redux/actions';
+import { deleteSleep } from '../SleepScreen/redux/actions';
+import { openScreen as openEditScreen } from '../SleepScreen/EditSleepScreen/redux/actions';
 
 import Br from '../../../components/Br';
 import Hr from '../../../components/Hr';
@@ -14,7 +16,10 @@ import Switcher from '../../../components/Switcher';
 import Text from '../../../components/Text';
 import WindowTitle from '../../../components/WindowTitle';
 
-import Sleep from '../../../blocks/Sleep';
+import Child from './Child';
+import DateComponent from './Date';
+import Sleep from './Sleep';
+
 
 const SLEEPS_ORDER = {
   daySummary: false,
@@ -70,36 +75,30 @@ class FeedScreen extends Component {
               active={!this.state.onlyMySleeps}
               onValueChange={value => this._changeMode(value)}
             />
-            <Br />
             {this.props.sleeps.map((child_sleep_for_date, index) => {
-              const dateChanged = dateIsEqual(currentDate, child_sleep_for_date.forDate);
+              const dateChanged = !dateIsEqual(currentDate, child_sleep_for_date.forDate);
               if (dateChanged) { currentDate = child_sleep_for_date.forDate; }
               return (<View key={index}>
-                { dateChanged && <Text>{currentDate}</Text> }
-                { this.state.onlyMySleeps && <Text>{child_sleep_for_date.childAge}</Text> }
+                <Br />
+                { dateChanged && <DateComponent value={currentDate} /> }
+                { !this.state.onlyMySleeps && <View>
+                    <Br />
+                    <Child child={child_sleep_for_date} />
+                  </View> }
                 { Object.keys(SLEEPS_ORDER).map((idx) => {
                   const val = SLEEPS_ORDER[idx];
                   const sleepsToRender = child_sleep_for_date.sleeps
                     .filter(sleep => sleep.isNightSleep == val)
-                  return sleepsToRender . length > 0 
-                    ? (<View key={idx}>
-                        <Text>{idx}</Text> 
-                        { sleepsToRender.map((sleep, i) => {
-                            return (
-                              <View key={i}>
-                                {this.state.onlyMySleeps
-                                  ? <Sleep
-                                      key={index}
-                                      sleep={sleep} />
-                                  : <Sleep
-                                      key={index}
-                                      onSleepPress={this.props.openEditScreen}
-                                      deleteSleep={this.props.deleteSleep}
-                                      sleep={sleep} />}
-                              </View>);
-                        })}
-                        {child_sleep_for_date[idx] && <Text>{child_sleep_for_date[idx].message}</Text>}
-                      </View>)
+                  return sleepsToRender.length > 0 
+                    ? (<Sleep
+                        key={idx}
+                        sleepType={idx}
+                        onlyMySleeps={this.state.onlyMySleeps}
+                        sleepsToRender={sleepsToRender}
+                        message={child_sleep_for_date[idx]}
+                        openEditScreen={this.props.openEditScreen}
+                        deleteSleep={this.props.deleteSleep}
+                      />)
                     : null;
                 })}
               </View>);
@@ -117,4 +116,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, feedActions)(FeedScreen);
+export default connect(mapStateToProps, {...feedActions, deleteSleep, openEditScreen})(FeedScreen);

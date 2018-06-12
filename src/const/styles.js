@@ -113,6 +113,9 @@ const Fn = {
 };
 
 const Styles = {
+  Const: {
+    maketHeight, maketWidth
+  },
   Fn: {
     ...Fn
   },
@@ -165,8 +168,18 @@ const Styles = {
     }
   },
   Blocks: {
+    Avatar: {
+      Container: {
+        borderColor: '#fdfdfb',
+        borderRadius: wp_width(6/maketWidth)/2,
+        borderWidth: wp_width(0.2/maketWidth),
+        height: wp_width(6/maketWidth),
+        marginRight: wp_width(1/maketWidth),
+        width: wp_width(6/maketWidth),
+      }
+    },
     Br: {
-      height: wp_height(0.035)
+      height: wp_width(0.025)
     },
     Center: {
       flex: 1,
@@ -316,6 +329,9 @@ const Styles = {
     }
   },
   Font: {
+    Bold: {
+      fontWeight: 'bold'
+    },
     Default: {
       fontFamily: 'Exo2-Regular',
       fontSize: FontSize.Regular,

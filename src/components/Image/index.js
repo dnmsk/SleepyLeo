@@ -1,24 +1,23 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import { Styles } from '../../const/styles';
 
 import Center from '../Center';
 import Row from '../Row';
 import Text from '../Text';
 
-class Avatar extends React.Component {
+class Image extends React.Component {
   render() {
     return (
       <Image
         style={[
-          Styles.Blocks.Avatar.Container,
           this.props.style,
         ]}
-        resizeMethod={this.props.resizeMethod}
+        resizeMethod={this.props.resizeMethod || 'contain'}
         source={this.props.source}
       />
     );
   }
 }
 
-export default Avatar;
+export default Image;
