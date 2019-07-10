@@ -4,6 +4,7 @@ import { Styles } from '../../../const/styles';
 import Avatar from '../../../components/Image/Avatar';
 import Row from '../../../components/Row';
 import Text from '../../../components/Text';
+
 class Child extends React.Component {
   render() {
     return (

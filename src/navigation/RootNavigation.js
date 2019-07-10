@@ -68,7 +68,7 @@ const WithNavigationState = connect(navigationMapStateToProps, {...actions, show
 
 class RootNavigation extends React.Component {
   constructor(props) {
-    //PushNotificator((notification) => {});
+    PushNotificator((notification) => {});
     super(props);
     this.state = this._getDimensions();
   }
