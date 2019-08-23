@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import { Image, View } from 'react-native';
 import { connect } from 'react-redux';
-import { Left, Body, Right } from 'native-base';
+import { Right } from 'native-base';
 
 import { openScreen as openEditScreen } from './EditSleepScreen/redux/actions';
 import { deleteSleep } from './redux/actions';
 
-import { numberToHourMin, toTimeString } from '/src/functions/date';
-import { Styles, Images } from '/src/const/styles';
-import Center from '/src/components/Center';
-import Cross from '/src/components/Cross';
-import Hr from '/src/components/Hr';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
+import { Styles, Images } from '../../../const/styles';
+import Center from '../../../components/Center';
+import Hr from '../../../components/Hr';
+import Row from '../../../components/Row';
+import Text from '../../../components/Text';
+import Sleep from '../../../blocks/Sleep';
 
 class TodaySleeps extends Component {
   constructor(props) {
@@ -83,63 +82,11 @@ class TodaySleeps extends Component {
       <Hr style={{marginBottom: 0.5 * this.props.vMargin}} />
       {sleeps.map((val, index) => {
         return (
-          <View key={index} style={{marginBottom: 10}}>
-          {
-            val.parts 
-              ? <Row>
-                  <View style={{width: Styles.Fn.HorizontalPercent(0.3)}}>
-                    <Text
-                      style={Styles.Font.Info}>
-                      {numberToHourMin(val.timeInHours)}
-                    </Text>
-                  </View>
-                  <View style={{width: Styles.Fn.HorizontalPercent(0.5)}}>
-                    <View style={{width: Styles.Fn.HorizontalPercent(0.45)}}>
-                      <Text
-                        style={[Styles.Font.Info]}>
-                        c {toTimeString(val.goToSleepTime, 'minutes')} до {toTimeString(val.awakeTime, 'minutes')}
-                      </Text>
-                    </View>
-                    {val.parts.map((part, idx) => {
-                      return <Row key={idx}>
-                        <View style={{width: Styles.Fn.HorizontalPercent(0.45)}}>
-                          <Text
-                            style={[Styles.Font.Info, Styles.Font.Inactive, {textDecorationLine: 'underline'}]}
-                            onPress={() => {this.props.openEditScreen(part);}}>
-                            c {toTimeString(part.goToSleepTime, 'minutes')} до {toTimeString(part.awakeTime, 'minutes')}
-                          </Text>
-                        </View>
-                        <View style={{width: Styles.Fn.HorizontalPercent(0.1)}}>
-                          <Right>
-                            <Cross Yellow onPress={() => { this.props.deleteSleep(part); }} />
-                          </Right>
-                        </View>
-                      </Row>
-                    })}
-                  </View>
-                </Row>
-              : <Row>
-                  <View style={{width: Styles.Fn.HorizontalPercent(0.3)}}>
-                    <Text
-                      style={Styles.Font.Info}>
-                      {numberToHourMin(val.timeInHours)}
-                    </Text>
-                  </View>
-                  <View style={{width: Styles.Fn.HorizontalPercent(0.45)}}>
-                    <Text
-                      style={[Styles.Font.Info, {textDecorationLine: 'underline'}]}
-                      onPress={() => {this.props.openEditScreen(val);}}>
-                      c {toTimeString(val.goToSleepTime, 'minutes')} до {toTimeString(val.awakeTime, 'minutes')}
-                    </Text>
-                  </View>
-                  <View style={{width: Styles.Fn.HorizontalPercent(0.1)}}>
-                    <Right>
-                      <Cross Yellow onPress={() => { this.props.deleteSleep(val); }} />
-                    </Right>
-                  </View>
-                </Row>
-          }
-          </View>
+          <Sleep
+            key={index}
+            onSleepPress={this.props.openEditScreen}
+            deleteSleep={this.props.deleteSleep}
+            sleep={val} />
         );
       })}
     </View>);

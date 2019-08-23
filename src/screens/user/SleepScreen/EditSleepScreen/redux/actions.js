@@ -1,6 +1,6 @@
 import { DEFAULT, SLEEP_EDIT_SET_MODE, SLEEP_EDIT_LOAD, SLEEP_EDIT, SLEEP_EDIT_DATE } from './const';
-import Net from '/src/network';
-import * as baseFunctions from '/src/actions/base';
+import Net from '../../../../../network';
+import * as baseFunctions from '../../../../../actions/base';
 import { getRecommendations, getLastSleep, getSleeps } from '../../redux/actions';
 import { isDaySleep } from '../../redux/sleepSwitcherFunctions';
 

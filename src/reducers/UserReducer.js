@@ -1,5 +1,5 @@
 import { RESET, USER_LOGIN, USER_LOGOUT, USER_REGISTER } from '../const/actions';
-import user from '/src/utils/user';
+import user from '../utils/user';
 
 const INITIAL_STATE = {
   user_details: {}

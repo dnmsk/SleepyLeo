@@ -1,5 +1,5 @@
 import Config from './config';
-import user from '/src/utils/user';
+import user from '../utils/user';
 
 let responses = {};
 responses[Config.Login] = {

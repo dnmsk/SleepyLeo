@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, TouchableOpacity, Text, View } from 'react-native';
-import { Images, Styles } from '/src/const/styles';
-import { if_prop_present } from '/src/functions/component';
+import { Images, Styles } from '../../const/styles';
+import { if_prop_present } from '../../functions/component';
 
 const color_map = {
   Default: Images.Components.Cross.White,

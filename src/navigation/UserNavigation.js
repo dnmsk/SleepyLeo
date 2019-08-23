@@ -2,14 +2,15 @@ import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import { Image, View } from 'react-native';
 
-import AlertScreen from '/src/screens/user/AlertScreen';
-import FavouriteScreen from '/src/screens/user/FavouriteScreen';
-import InfoScreen from '/src/screens/user/InfoScreen';
-import ProfileScreen from '/src/screens/user/ProfileScreen';
-import SleepScreen from '/src/screens/user/SleepScreen';
-import EditSleepScreen from '/src/screens/user/SleepScreen/EditSleepScreen';
+import AlertScreen from '../screens/user/AlertScreen';
+import FavouriteScreen from '../screens/user/FavouriteScreen';
+import FeedScreen from '../screens/user/FeedScreen';
+import InfoScreen from '../screens/user/InfoScreen';
+import ProfileScreen from '../screens/user/ProfileScreen';
+import SleepScreen from '../screens/user/SleepScreen';
+import EditSleepScreen from '../screens/user/SleepScreen/EditSleepScreen';
 
-import { Styles, Images } from '/src/const/styles';
+import { Styles, Images } from '../const/styles';
 
 const buildIcon = function(src, focused) {
   return (
@@ -52,6 +53,14 @@ const UserNavigation = TabNavigator({
       navigationOptions: {
         tabBarIcon: ({ focused, tintColor }) => {
           return buildIcon(Images.Navigation.User.Sleep, focused);
+        }
+      }
+    },
+    UserFeed: {
+      screen: FeedScreen,
+      navigationOptions: {
+        tabBarIcon: ({ focused, tintColor }) => {
+          return buildIcon(Images.Navigation.User.Favourite, focused);
         }
       }
     },/** /

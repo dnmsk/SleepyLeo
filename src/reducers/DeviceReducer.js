@@ -1,5 +1,5 @@
 import { DEVICE_INIT } from '../const/actions';
-import device from '/src/utils/device';
+import device from '../utils/device';
 
 const INITIAL_STATE = {};
 

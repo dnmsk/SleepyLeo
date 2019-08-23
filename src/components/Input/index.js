@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, Item } from 'native-base';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../const/styles';
 
 class CustomInput extends React.Component {
   render() {

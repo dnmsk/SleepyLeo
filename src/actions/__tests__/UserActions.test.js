@@ -1,4 +1,4 @@
-import { DEFAULT, USER_LOGIN, USER_REGISTER, USER_LOGOUT } from '/src/const/actions';
+import { DEFAULT, USER_LOGIN, USER_REGISTER, USER_LOGOUT } from '~/const/actions';
 
 jest.mock('../../network/index');
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Styles } from '/src/const/styles';
+import { Styles } from '../../const/styles';
 
-import Center from '/src/components/Center';
-import Row from '/src/components/Row';
-import Text from '/src/components/Text';
+import Center from '../Center';
+import Row from '../Row';
+import Text from '../Text';
 
 class WindowTitle extends React.Component {
   render() {

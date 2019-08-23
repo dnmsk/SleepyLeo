@@ -1,5 +1,5 @@
-import { DATA_SLEEP_NORMS } from '/src/const/actions';
-import Net from '/src/network';
+import { DATA_SLEEP_NORMS } from '../const/actions';
+import Net from '../network';
 
 export function sleepNorms(onSuccess) {
   return (dispatch) => {

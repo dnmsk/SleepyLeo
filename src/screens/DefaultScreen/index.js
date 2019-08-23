@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Image, Linking } from 'react-native';
 import { Container, Header, Left, Right, Content} from 'native-base';
-import { ButtonPrimary, ButtonSlave } from '/src/components/Button';
+import { ButtonPrimary, ButtonSlave } from '../../components/Button';
 //import I18n from 'app/i18n/i18n';
-import { Styles, Images } from '/src/const/styles';
-import Center from '/src/components/Center';
-import Text from '/src/components/Text';
-import Footer from '/src/components/Footer';
+import { Styles, Images } from '../../const/styles';
+import Center from '../../components/Center';
+import Text from '../../components/Text';
+import Footer from '../../components/Footer';
 
 class DefaultScreen extends Component {
   render() {

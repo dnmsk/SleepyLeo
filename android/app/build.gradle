@@ -99,7 +99,7 @@ android {
 
     defaultConfig {
         applicationId "com.sleepyleo"
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-push-notification')
     compile project(':react-native-vector-icons')
     compile project(':react-native-secure-key-store')
     compile project(':react-native-i18n')
